@@ -18,4 +18,4 @@ export abstract class ProdutoAbstract{
     public setCodigo(codigo: string): void{
         this.codigo = codigo;
     }
-}
+} new line
