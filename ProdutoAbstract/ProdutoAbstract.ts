@@ -40,5 +40,4 @@ export abstract class ProdutoAbstract{
     }
 
     abstract executar() : void;
-  } 
 }
