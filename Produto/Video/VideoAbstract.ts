@@ -25,6 +25,4 @@ export abstract class VideoAbstract extends ProdutoAbstract{
     public setFaixaEtaria(faixaEtaria): void{
         this.faixaEtaria = faixaEtaria;
     }
-
-    abstract executar() : void;
 }

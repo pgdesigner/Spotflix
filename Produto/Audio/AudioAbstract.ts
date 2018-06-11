@@ -25,6 +25,4 @@ export abstract class AudioAbstract extends ProdutoAbstract{
     public setDuracao(duracao: number): void{
         this.duracao = duracao;
     } 
-
-    abstract executar() : void;
 }
