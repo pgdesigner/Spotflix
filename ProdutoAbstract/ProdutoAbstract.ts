@@ -18,7 +18,6 @@ export abstract class ProdutoAbstract{
     public setCodigo(codigo: string): void{
         this.codigo = codigo;
     }
-
     public getNome(): string{
         return this.nome;
     }
@@ -41,4 +40,5 @@ export abstract class ProdutoAbstract{
     }
 
     abstract executar() : void;
-} 
+  } 
+}
