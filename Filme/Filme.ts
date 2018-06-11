@@ -1,5 +1,4 @@
-import { Videos } from './Videos';
-
+import { Videos } from '../Video/Video'
 export class Filme extends Videos{
     private duracao: number;
     

@@ -1,4 +1,4 @@
-import { Videos } from './Videos';
+import { Videos } from '../Video/Video';
 
 export class Series extends Videos{
     numeroDeEp: number;

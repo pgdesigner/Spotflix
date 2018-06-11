@@ -1,4 +1,4 @@
-import {Audios} from './Audios';
+import {Audios} from '../Audio/Audio';
 
 export class Podcasts extends Audios{
     private tematica: string;

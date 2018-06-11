@@ -1,4 +1,4 @@
-import { ProdutoAbstract } from './ProdutoAbstract';
+import { ProdutoAbstract } from '../ProdutoAbstract/ProdutoAbstract';
 
 export abstract class Videos extends ProdutoAbstract{
     protected anoLancamento: number;
