@@ -1,6 +1,6 @@
-import {Audios} from '../Audio/Audio';
+import {AudioAbstract} from '../AudioAbstract';
 
-export class Musicas extends Audios{
+export class Musicas extends AudioAbstract{
     private album: string;
 
     public constructor(codigo: string, nome: string, genero: string, 

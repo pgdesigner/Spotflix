@@ -1,6 +1,6 @@
-import { ProdutoAbstract } from '../ProdutoAbstract/ProdutoAbstract';
+import { ProdutoAbstract } from '../ProdutoAbstract';
 
-export abstract class Audios extends ProdutoAbstract{
+export abstract class AudioAbstract extends ProdutoAbstract{
     protected autor: string;
     protected duracao: number;
 

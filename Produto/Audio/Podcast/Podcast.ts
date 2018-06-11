@@ -1,6 +1,6 @@
-import {Audios} from '../Audio/Audio';
+import {AudioAbstract} from '../AudioAbstract';
 
-export class Podcasts extends Audios{
+export class Podcasts extends AudioAbstract{
     private tematica: string;
 
     public constructor(codigo: string, nome: string, genero: string,

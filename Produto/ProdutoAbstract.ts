@@ -10,7 +10,6 @@ export abstract class ProdutoAbstract{
         this.nome == nome;
         this.genero == genero;
         this.preco == preco;
-
     }
     public getCodigo(): string{
         return this.codigo;
@@ -24,20 +23,17 @@ export abstract class ProdutoAbstract{
     public setNome(Nome: string): void{
         this.nome = Nome;
     }
-
     public getGenero(): string{
         return this.genero;
     }
     public setGenero(genero: string): void{
         this.genero = genero;
     }
-
     public getPreco(): number{
         return this.preco;
     }
     public setPreco(preco: number): void{
         this.preco = preco;
     }
-
     abstract executar() : void;
 }

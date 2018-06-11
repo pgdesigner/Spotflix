@@ -1,8 +1,8 @@
-import { Videos } from '../Video/Video';
+import { VideoAbstract } from '../VideoAbstract';
 
-export class Series extends Videos{
+export class Series extends VideoAbstract{
     numeroDeEp: number;
-    duracaoMediaDeEp: number;
+    duracaoMediaDeEp: number;//minutos
 
     public constructor(anoLancamento: number, faixaEtaria: number,
             codigo: string, nome: string, genero: string, 
