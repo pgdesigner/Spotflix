@@ -37,8 +37,6 @@ export class Pacote extends ProdutoAbstract{
     public setPrecoMensal(precoMensal: number): void{
         this.precoMensal = precoMensal;    
     }
-    //public somaPrecoProduto() : void{
-    //    for(let i
 
     public executar(): void{
 
