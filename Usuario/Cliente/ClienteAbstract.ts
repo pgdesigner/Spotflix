@@ -18,5 +18,34 @@ export abstract class ClienteAbstract extends UsuarioAbstract{
     public getEndereco(): string{
         return this.endereco;
     }
-    public setEndereco(endereco: string): void
+    public setEndereco(endereco: string): void{
+        this.endereco = endereco;
+    }
+    public getDataDeNascimento(): Data{
+        return this.dadaDeNascimento;
+    }
+    public setDataDeNascimento(dataDeNascimento: Data): void{
+        this.dadaDeNascimento = this.dadaDeNascimento;
+    }
+    public getListaDeProduto(): Array<ProdutoAbstract>{
+        return this.listaDeProduto;
+    }
+    public setListaDeProduto(listaDeProduto: Array<ProdutoAbstract>): void{
+        this.listaDeProduto = listaDeProduto;
+    }
+    public getCartaoDeCredito(): CartaoDeCredito {
+        return this.cartaoDeCredito;
+    }
+    public setCartaoDeCredito(cartaoDeCredito: CartaoDeCredito): void{
+        this.cartaoDeCredito = cartaoDeCredito;
+    }
+    public SecadastrarNoSistema(){
+
+    }
+    public ComprarUmProduto(){
+
+    }
+    public ExecutarUmaMidia(){
+        
+    }
 }
