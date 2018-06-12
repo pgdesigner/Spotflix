@@ -1,5 +1,5 @@
 import { ProdutoAbstract } from '../ProdutoAbstract';
-import {Data} from './Data/Data';
+import {Data} from '../../Data/Data';
 
 export class Pacote extends ProdutoAbstract{
     private produtos: Array<ProdutoAbstract>;

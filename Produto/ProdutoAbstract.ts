@@ -6,10 +6,10 @@ export abstract class ProdutoAbstract{
 
     public constructor(codigo: string, nome: string,
                     genero: string, preco: number){
-        this.codigo == codigo;
-        this.nome == nome;
-        this.genero == genero;
-        this.preco == preco;
+        this.codigo = codigo;
+        this.nome = nome;
+        this.genero = genero;
+        this.preco = preco;
     }
     public getCodigo(): string{
         return this.codigo;

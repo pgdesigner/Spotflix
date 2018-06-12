@@ -22,7 +22,7 @@ export abstract class VideoAbstract extends ProdutoAbstract{
     public getFaixaEtaria(): number{
         return this.faixaEtaria;
     }
-    public setFaixaEtaria(faixaEtaria): void{
+    public setFaixaEtaria(faixaEtaria: number): void{
         this.faixaEtaria = faixaEtaria;
     }
 }
