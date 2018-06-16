@@ -3,7 +3,7 @@ import { ProdutoAbstract } from '../Produto/ProdutoAbstract';
 export class RepositorioProduto{
     private repositorioP : Map<string,ProdutoAbstract>;
 
-    public constructor(repositorioP: Map<ProdutoAbstract>){
+    public constructor(repositorioP: Map<string, ProdutoAbstract>){
         this.repositorioP = new Map<string,ProdutoAbstract>();
     }
 
