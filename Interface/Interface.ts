@@ -2,6 +2,9 @@ import { Gerente } from "../Usuario/Funcionario/Gerente/Gerente";
 import { RepositorioUsuario } from "../Repositorios/RepositorioUsuario";
 import { RepositorioProduto } from "../Repositorios/RepositorioProduto";
 
+declare function require(name:string): any;
+var readline = require('readline-sync');
+
 class Interface{
     
 }
