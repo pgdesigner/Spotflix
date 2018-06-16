@@ -1,5 +1,4 @@
-import { UsuarioAbstract } from "../../Usuario/UsuarioAbstract";
-import { Gerente } from "../../Usuario/Funcionario/Gerente/Gerente";
+import { UsuarioAbstract } from "../Usuario/UsuarioAbstract";
 
 export class RepositorioUsuario {
     private repositorio : Map<string,UsuarioAbstract>;
@@ -16,13 +15,5 @@ export class RepositorioUsuario {
     }
     public retornarUsuario(email:string) : UsuarioAbstract|undefined{
         return this.repositorio.get(email)
-    }
-
-    public adicionarGerente(gerente: Gerente) : boolean{
-        this.repositorio.set(gerente.getemail(), gerente);
-        return true;
-    }
-    public removerGerente(email:string) : boolean{
-        return this.repositorio.delete(email);
     }
 }
