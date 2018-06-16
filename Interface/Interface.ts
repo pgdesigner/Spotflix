@@ -4,6 +4,6 @@ import { RepositorioUsuario } from "../Repositorios/RepositorioUsuario";
 class Interface{
     
 }
-let repositoriodeusuarios : RepositorioUsuario = new RepositorioUsuario;()
+let repositoriodeusuarios : RepositorioUsuario = new RepositorioUsuario();
 repositoriodeusuarios.push()
 let repositoriodeprodutos = new repositoriodeprodutos 
