@@ -27,7 +27,7 @@ export abstract class ClienteAbstract extends UsuarioAbstract{
     public setDataDeNascimento(dataDeNascimento: Data): void{
         this.dataDeNascimento = dataDeNascimento
     }
-    public getListaDeProduto(): Array<ProdutoAbstract>{
+    public getListaDeProduto(): Array<ProdutoAbstract>{// A lista que contem os produtos comprados
         return this.listaDeProduto;
     }
     public setListaDeProduto(listaDeProduto: Array<ProdutoAbstract>): void{
@@ -38,14 +38,5 @@ export abstract class ClienteAbstract extends UsuarioAbstract{
     }
     public setCartaoDeCredito(cartaoDeCredito: CartaoDeCredito): void{
         this.cartaoDeCredito = cartaoDeCredito;
-    }
-    public SecadastrarNoSistema(){
-
-    }
-    public ComprarUmProduto(){
-
-    }
-    public ExecutarUmaMidia(){
-        
     }
 }
