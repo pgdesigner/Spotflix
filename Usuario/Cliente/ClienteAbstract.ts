@@ -5,13 +5,13 @@ import{CartaoDeCredito} from'../../CartaoDeCredito/CartaoDeCredito';
 
 export abstract class ClienteAbstract extends UsuarioAbstract{
     protected endereco: string
-    protected dadaDeNascimento: Data;
+    protected dataDeNascimento: Data;
     protected listaDeProduto: Array<ProdutoAbstract>;
     protected cartaoDeCredito: CartaoDeCredito;
     public constructor(nome: string, email: string, senha: string, endereco: string, dataDeNascimento: Data, listaDeProduto: Array<ProdutoAbstract>, cartaoDeCredito: CartaoDeCredito){
         super(nome,email,senha);
         this.endereco = endereco;
-        this.dadaDeNascimento = dataDeNascimento;
+        this.dataDeNascimento = dataDeNascimento;
         this.listaDeProduto = listaDeProduto;
         this.cartaoDeCredito = cartaoDeCredito;
     }
@@ -22,10 +22,10 @@ export abstract class ClienteAbstract extends UsuarioAbstract{
         this.endereco = endereco;
     }
     public getDataDeNascimento(): Data{
-        return this.dadaDeNascimento;
+        return this.dataDeNascimento;
     }
     public setDataDeNascimento(dataDeNascimento: Data): void{
-        this.dadaDeNascimento = this.dadaDeNascimento;
+        this.dataDeNascimento = dataDeNascimento
     }
     public getListaDeProduto(): Array<ProdutoAbstract>{
         return this.listaDeProduto;
