@@ -1,9 +1,9 @@
-import { UsuarioAbstract } from "../../Usuario/UsuarioAbstract";
+import { UsuarioAbstract } from "../Usuario/UsuarioAbstract";
 
 export class RepositorioUsuario {
     private repositorio : Map<string,UsuarioAbstract>;
 
-    public constructor(repositorio: Map<string, UsuarioAbstract>){
+    public constructor(){
         this.repositorio = new Map<string,UsuarioAbstract>()
     }
     public adicionarUsuario(email:string, usuario: UsuarioAbstract) : boolean{
