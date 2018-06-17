@@ -8,7 +8,7 @@ export abstract class ClienteAbstract extends UsuarioAbstract{
     protected dataDeNascimento: Data;
     protected listaDeProduto: Array<ProdutoAbstract>;
     protected cartaoDeCredito: CartaoDeCredito;
-    public constructor(nome: string, email: string, senha: string, endereco: string, dataDeNascimento: Data, listaDeProduto: Array<ProdutoAbstract>, cartaoDeCredito: CartaoDeCredito){
+    public constructor(nome: string, email: string, senha: string, endereco: string, dataDeNascimento: Data, listaDeProduto: Array<ProdutoAbstract> = [], cartaoDeCredito: CartaoDeCredito){
         super(nome,email,senha);
         this.endereco = endereco;
         this.dataDeNascimento = dataDeNascimento;
