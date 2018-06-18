@@ -36,7 +36,7 @@ while (fechar != "sim"){
         senha = input("Digite sua senha: <ENTER>");
 
         if (login  ){
-            console.log("****Olá Gerente <Nome do Gerente>****");
+            console.log("****Olá Gerente" + g + "****");
             console.log("1 - Cadastrar Operador");
             console.log("2 - Remover Operador");
             console.log("3 - Listar de Produtos");
@@ -48,7 +48,7 @@ while (fechar != "sim"){
             console.log("9 - Sair");
             op = parseInt (input ("Digite a opção: <ENTER>"));
             if (op == 1){
-                console.log("Cadastro de Operador");
+                console.log("**Cadastro do Operador**");
                 console.log("Preencha todos os dados");
                 let nome:string = input("Digite o nome: <ENTER>");
                 let matricula:string = input("Digite a matrícula: <ENTER>");
@@ -56,17 +56,42 @@ while (fechar != "sim"){
                 let email:string = input("Informe o email: <ENTER>");
                 let senha: string = input("Informe uma senha: <ENTER>");
                 let ope: UsuarioAbstract = new OperadorDeSistema(matricula,salario,nome,email,senha);
-                repositoriodeusuarios.adicionarUsuario(email, ope)
+                repositoriodeusuarios.adicionarUsuario(email, ope);
                 
             }
             else if (op == 2){
-
+                let matricula:string = input("Informe a Matrícula: <ENTER>");
+                repositoriodeusuarios.removerUsuario(matricula);
             }
             else if (op == 3 || 4 || 5){
-                
+                if (op == 3){
+                    
+                }
+                else if (op == 4){
+                    
+                }
+                else if (op == 5){
+                    
+                }
             }
             else if (op == 6 || 7 || 8){
-                
+                if (op == 6){
+                    let codigo: string = input("Informe o código do produto: <ENTER>")
+                    repositoriodeprodutos.retornarProduto(codigo);
+                }
+                else if (op == 7){
+                    let email: string = input("Informe o email do cliente: <ENTER>")
+                    repositoriodeusuarios.retornarUsuario(email);
+                }
+                else if (op == 8){
+                    let email: string = input("Informe o email do cliente: <ENTER>")
+                    repositoriodeusuarios.retornarUsuario(email);
+                }
+            }
+            else if (op == 9){
+                console.log("Voce deseja mesmo sair?")
+                console.log("   sim          nao");
+                fechar = input("Digite sua opção: <ENTER>");
             }
             
         }
@@ -81,6 +106,27 @@ while (fechar != "sim"){
             console.log("6 - Procurar Cliente");
             console.log("7 - Sair");
             op = parseInt (input ("Digite a opção: <ENTER>"));
+            if (op == 1){
+                
+            }
+            else if(op == 2){
+
+            }
+            else if(op == 3){
+                
+            }
+            else if(op == 4){
+                
+            }
+            else if(op == 5){
+                
+            }
+            else if(op == 6){
+                
+            }
+            else if(op == 7){
+                
+            }
         }   
         
         else if (login  ){
@@ -91,6 +137,21 @@ while (fechar != "sim"){
             console.log("4 - Play");
             console.log("5 - Sair");
             op = parseInt (input ("Digite a opção: <ENTER>"));
+            if (op == 1){
+                
+            }
+            else if(op == 2){
+
+            }
+            else if(op == 3){
+                
+            }
+            else if(op == 4){
+                
+            }
+            else if(op == 5){
+                
+            }
         } 
     }
     else if (op == 2){
