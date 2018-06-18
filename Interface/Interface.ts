@@ -8,10 +8,12 @@ import { Gerente } from "../Usuario/Funcionario/Gerente/Gerente";
 import { RepositorioUsuario } from "../Repositorios/RepositorioUsuario";
 import { RepositorioProduto } from "../Repositorios/RepositorioProduto";
 import { Data } from "../Data/Data";
+import { Cliente } from "../Usuario/Cliente/Cliente";
+import { CartaoDeCredito } from "../CartaoDeCredito/CartaoDeCredito";
 
 let op: number = 1;
 let log: number = 1;
-let logout: number = "sim";
+let logout: string = "sim";
 let fechar: string = "não";
 let senha: string;
 let login: string;
@@ -37,22 +39,29 @@ while (fechar != "sim"){
         console.log("Vamos criar o seu cadastro");
         console.log("Preencha as informaçoes com seus dados pessoais");
         let nome: string= input("Digite seu nome: <ENTER>");
+        let datanascimento: Data = new Data(parseInt(input("informe a o dia")),
+                                    parseInt(input("informe a o mes")),
+                                    parseInt(input("informe a o ano")) );
         let endereco: string = input("Informe seu endereco: <ENTER>");
-        console.log("Para efetuar seu cadastro precisamos de seus dados de pagamento";)
-        let numero:string = input("Informe o numero de seu cartão");
-        let validade: Data = new Data(parseInt(input("informe a o dia")),parseInt(input("informe a o mes")),parseInt(input("informe a o ano")) )        
-        let codigocvv: number = parseInt(input("Informe o codigo CVV: <ENTER>"))
-        let limite: number = parseInt(input("Informe o limite de seu cartão: <ENTER>"))
+        console.log("Para efetuar seu cadastro precisamos de seus dados de pagamento");
+        let cartao: CartaoDeCredito = new CartaoDeCredito(input("Informe o numero de seu cartão"),
+                                                             new Data(parseInt(input("informe a o dia")),
+                                                            parseInt(input("informe a o mes")),
+                                                            parseInt(input("informe a o ano")) ),
+                                                            parseInt(input("Informe o codigo CVV: <ENTER>")),
+                                                            parseInt(input("Informe o limite de seu cartão: <ENTER>")));       
         console.log("Agora é só informar um email e uma senha");
         let email: string = input("Informe seu email: <ENTER>");
         let senha: string = input("Informe uma senha: <ENTER>");
+        let cliente : Cliente = new Cliente(nome, email, senha, endereco, datanascimento, cartao);
+        repositoriodeusuarios.adicionarUsuario(email, cliente);
         op = 1;
 
 
 
     }
     else if (op == 3){
-        console.log("voce deseja mesmo sair?")
+        console.log("voce deseja mesmo sair?");
         console.log("   sim          nao");
         fechar = input("Digite sua opção: <ENTER>");
 
