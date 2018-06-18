@@ -1,35 +1,36 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class CartaoDeCredito {
-    constructor(numero, validade, codigoCVV, limite) {
+exports.__esModule = true;
+var CartaoDeCredito = /** @class */ (function () {
+    function CartaoDeCredito(numero, validade, codigoCVV, limite) {
         this.numero = numero;
         this.validade = validade;
         this.codigoCVV = codigoCVV;
         this.limite = limite;
     }
-    getNumero() {
+    CartaoDeCredito.prototype.getNumero = function () {
         return this.numero;
-    }
-    setNumero(numero) {
+    };
+    CartaoDeCredito.prototype.setNumero = function (numero) {
         this.numero = numero;
-    }
-    getValidade() {
+    };
+    CartaoDeCredito.prototype.getValidade = function () {
         return this.validade;
-    }
-    setValidade(validade) {
+    };
+    CartaoDeCredito.prototype.setValidade = function (validade) {
         this.validade = validade;
-    }
-    getCodigoCVV() {
+    };
+    CartaoDeCredito.prototype.getCodigoCVV = function () {
         return this.codigoCVV;
-    }
-    setCodigoCVV(codigoCVV) {
+    };
+    CartaoDeCredito.prototype.setCodigoCVV = function (codigoCVV) {
         this.codigoCVV = codigoCVV;
-    }
-    getLimite() {
+    };
+    CartaoDeCredito.prototype.getLimite = function () {
         return this.limite;
-    }
-    setLimite(limite) {
+    };
+    CartaoDeCredito.prototype.setLimite = function (limite) {
         this.limite = limite;
-    }
-}
+    };
+    return CartaoDeCredito;
+}());
 exports.CartaoDeCredito = CartaoDeCredito;
