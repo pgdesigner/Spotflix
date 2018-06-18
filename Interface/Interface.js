@@ -1,38 +1,34 @@
-declare function require(nome : string) : any;
+"use strict";
+exports.__esModule = true;
 var readline = require('readline-sync');
-export function input(name : string) : string {
+function input(name) {
     return readline.question(name);
 }
-
-import { Gerente } from "../Usuario/Funcionario/Gerente/Gerente";
-import { RepositorioUsuario } from "../Repositorios/RepositorioUsuario";
-import { RepositorioProduto } from "../Repositorios/RepositorioProduto";
-import { Data } from "../Data/Data";
-import { Cliente } from "../Usuario/Cliente/Cliente";
-import { CartaoDeCredito } from "../CartaoDeCredito/CartaoDeCredito";
-import { OperadorDeSistema } from "../Usuario/Funcionario/OperadorDeSistema/OperadorDeSistema";
-
-let op: number = 1;
-let log: number = 1;
-let logout: string = "sim";
-let fechar: string = "não";
-let senha: string;
-let login: string;
-let g: Gerente = new Gerente("000000",12,"admin","gerente@admin.com","admin");
-let a: Gerente = new Gerente("000067876800",12,"1admin","gere4nte@admin.com","admin");
-let b: Gerente = new Gerente("0122300",12,"a2dmin","ge3rente@admin.com","admin");
-let repositoriodeusuarios : RepositorioUsuario = new RepositorioUsuario;
-let repositoriodeprodutos: RepositorioProduto = new RepositorioProduto;
+exports.input = input;
+var Gerente_1 = require("../Usuario/Funcionario/Gerente/Gerente");
+var RepositorioUsuario_1 = require("../Repositorios/RepositorioUsuario");
+var RepositorioProduto_1 = require("../Repositorios/RepositorioProduto");
+var Cliente_1 = require("../Usuario/Cliente/Cliente");
+var op = 1;
+var log = 1;
+var logout = "sim";
+var fechar = "não";
+var senha;
+var login;
+var g = new Gerente_1.Gerente("000000", 12, "admin", "gerente@admin.com", "admin");
+var a = new Gerente_1.Gerente("000067876800", 12, "1admin", "gere4nte@admin.com", "admin");
+var b = new Gerente_1.Gerente("0122300", 12, "a2dmin", "ge3rente@admin.com", "admin");
+var repositoriodeusuarios = new RepositorioUsuario_1.RepositorioUsuario;
+var repositoriodeprodutos = new RepositorioProduto_1.RepositorioProduto;
 repositoriodeusuarios.adicionarUsuario(g.getemail(), g);
 repositoriodeusuarios.adicionarUsuario(b.getemail(), b);
 repositoriodeusuarios.adicionarUsuario(a.getemail(), a);
-
-for( let x of repositoriodeusuarios.get().values()){
-   if (x instanceof Cliente){
-    console.log(x);
-   }
+for (var _i = 0, _a = repositoriodeusuarios.get().values(); _i < _a.length; _i++) {
+    var x = _a[_i];
+    if (x instanceof Cliente_1.Cliente) {
+        console.log(x);
+    }
 }
-
 /*
 while (fechar != "sim"){
     console.log("****Bem Vindo****");
@@ -45,7 +41,7 @@ while (fechar != "sim"){
         login = input("Digite seu login(emai-l): <ENTER>");
         senha = input("Digite sua senha: <ENTER>");
         try{repositoriodeusuarios.retornarUsuario(login)
-            let a = repositoriodeusuarios.retornarUsuario(login).getsenha; 
+            let a = repositoriodeusuarios.retornarUsuario(login).getsenha;
             if ((a as any) !== (senha as any)){
                 console.log("A senha errada");
             }
@@ -76,7 +72,7 @@ while (fechar != "sim"){
                                                             parseInt(input("informe a o mes")),
                                                             parseInt(input("informe a o ano")) ),
                                                             parseInt(input("Informe o codigo CVV: <ENTER>")),
-                                                            parseInt(input("Informe o limite de seu cartão: <ENTER>")));       
+                                                            parseInt(input("Informe o limite de seu cartão: <ENTER>")));
         console.log("Agora é só informar um email e uma senha");
         let email: string = input("Informe seu email: <ENTER>");
         let senha: string = input("Informe uma senha: <ENTER>");
@@ -93,4 +89,4 @@ while (fechar != "sim"){
         fechar = input("Digite sua opção: <ENTER>");
 
     }
-}*/
+}*/ 

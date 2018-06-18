@@ -23,5 +23,9 @@ export class RepositorioUsuario {
             throw "Usuário de email: " + email + "não existe"
         return usuario;
     }
+    public get(): Map<string, UsuarioAbstract> {
+        return this.repositorio;
+
+    }
 }
 

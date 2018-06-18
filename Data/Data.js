@@ -1,32 +1,33 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class Data {
-    constructor(dia, mes, ano) {
+exports.__esModule = true;
+var Data = /** @class */ (function () {
+    function Data(dia, mes, ano) {
         this.dia = dia;
         this.mes = mes;
         this.ano = ano;
     }
-    getDia() {
+    Data.prototype.getDia = function () {
         return this.dia;
-    }
-    setDia(dia) {
+    };
+    Data.prototype.setDia = function (dia) {
         this.dia = dia;
-    }
-    getMes() {
+    };
+    Data.prototype.getMes = function () {
         return this.mes;
-    }
-    setMes(mes) {
+    };
+    Data.prototype.setMes = function (mes) {
         this.mes = mes;
-    }
-    getAno() {
+    };
+    Data.prototype.getAno = function () {
         return this.ano;
-    }
-    setAno(ano) {
+    };
+    Data.prototype.setAno = function (ano) {
         this.ano = ano;
-    }
-    toString() {
-        let res = this.dia + "/" + this.mes + "/" + this.ano;
+    };
+    Data.prototype.toString = function () {
+        var res = this.dia + "/" + this.mes + "/" + this.ano;
         return res;
-    }
-}
+    };
+    return Data;
+}());
 exports.Data = Data;
