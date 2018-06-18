@@ -21,6 +21,9 @@ var RepositorioProduto = /** @class */ (function () {
             throw "Codigo de produto: " + codigo + "não existe";
         return produto;
     };
+    RepositorioProduto.prototype.get = function () {
+        return this.repositorioP;
+    };
     return RepositorioProduto;
 }());
 exports.RepositorioProduto = RepositorioProduto;

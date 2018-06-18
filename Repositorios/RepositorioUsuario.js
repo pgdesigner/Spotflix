@@ -21,6 +21,9 @@ var RepositorioUsuario = /** @class */ (function () {
             throw "Usuário de email: " + email + "não existe";
         return usuario;
     };
+    RepositorioUsuario.prototype.get = function () {
+        return this.repositorio;
+    };
     return RepositorioUsuario;
 }());
 exports.RepositorioUsuario = RepositorioUsuario;

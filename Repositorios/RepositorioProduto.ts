@@ -24,6 +24,8 @@ export class RepositorioProduto{
         return produto;
        
     }  
-
+    public get(): Map<string, ProdutoAbstract> {
+        return this.repositorioP;
+    }
 }
 

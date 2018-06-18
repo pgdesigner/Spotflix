@@ -25,7 +25,6 @@ export class RepositorioUsuario {
     }
     public get(): Map<string, UsuarioAbstract> {
         return this.repositorio;
-
     }
 }
 

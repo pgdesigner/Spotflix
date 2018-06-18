@@ -10,6 +10,8 @@ import { RepositorioProduto } from "../Repositorios/RepositorioProduto";
 import { Data } from "../Data/Data";
 import { UsuarioAbstract } from "../Usuario/UsuarioAbstract";
 import { OperadorDeSistema } from "../Usuario/Funcionario/OperadorDeSistema/OperadorDeSistema";
+import {Cliente} from "../Usuario/Cliente/Cliente";
+import { ProdutoAbstract } from "../Produto/ProdutoAbstract";
 
 let op: number = 1;
 let log: number = 1;
@@ -35,7 +37,25 @@ while (fechar != "sim"){
         login = input("Digite seu login(emai-l): <ENTER>");
         senha = input("Digite sua senha: <ENTER>");
 
-        if (login  ){
+        try{repositoriodeusuarios.retornarUsuario(login)
+            let a = repositoriodeusuarios.retornarUsuario(login).getsenha; 
+            if ((a as any) !== (senha as any)){
+                console.log("A senha errada");
+            }
+            if (repositoriodeusuarios.retornarUsuario(login) instanceof Cliente){
+                log = 1;
+            }
+            else if (repositoriodeusuarios.retornarUsuario(login) instanceof OperadorDeSistema){
+                log = 2;
+            }
+            else if (repositoriodeusuarios.retornarUsuario(login) instanceof Gerente){
+                log = 3;
+            }
+        }catch (ex){
+            console.log(ex);
+        }
+
+        if (log == 3){
             console.log("****Olá Gerente" + g + "****");
             console.log("1 - Cadastrar Operador");
             console.log("2 - Remover Operador");
@@ -66,16 +86,30 @@ while (fechar != "sim"){
             else if (op == 3 || 4 || 5){
                 if (op == 3){
                     console.log("**Listagem de produtos**")
-                    for (let x of repositoriodeprodutos[]){
-                        console.log(x);
+                    let a = repositoriodeprodutos.get().values
+                    for( let x of a()){
+                        if (x instanceof ProdutoAbstract){
+                         console.log(x);
+                        }
                     }
                 }
-                
                 else if (op == 4){
-                    
+                    console.log("**Listagem de clientes**")
+                    let a = repositoriodeusuarios.get().values
+                    for( let x of a()){
+                        if (x instanceof Cliente){
+                         console.log(x);
+                        }
+                    }
                 }
                 else if (op == 5){
-                    
+                    console.log("**Listagem de operadores**")
+                    let a = repositoriodeusuarios.get().values
+                    for( let x of a()){
+                        if (x instanceof OperadorDeSistema){
+                         console.log(x);
+                        }
+                    }
                 }
             }
             else if (op == 6 || 7 || 8){
@@ -100,7 +134,7 @@ while (fechar != "sim"){
             
         }
 
-        else if (login  ){
+        else if (log == 2){
             console.log("****Olá Operador <Nome do Operador>****");
             console.log("1 - Cadastrar Produtos");
             console.log("2 - Remover Produtos");
@@ -139,7 +173,7 @@ while (fechar != "sim"){
             }
         }   
         
-        else if (login  ){
+        else if (log == 1){
             console.log("****Olá <Nome do Cliente>****");
             console.log("1 - Listar Produtos da Loja");
             console.log("2 - Listar meus Produtos");
