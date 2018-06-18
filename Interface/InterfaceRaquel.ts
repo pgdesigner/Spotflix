@@ -65,8 +65,12 @@ while (fechar != "sim"){
             }
             else if (op == 3 || 4 || 5){
                 if (op == 3){
-                    
+                    console.log("**Listagem de produtos**")
+                    for (let x of repositoriodeprodutos[]){
+                        console.log(x);
+                    }
                 }
+                
                 else if (op == 4){
                     
                 }
@@ -107,7 +111,13 @@ while (fechar != "sim"){
             console.log("7 - Sair");
             op = parseInt (input ("Digite a opção: <ENTER>"));
             if (op == 1){
-                
+                console.log("***Cadastro de Produto***");
+                console.log("**Preencha todos os dados**");
+                let codigo = input("Digite código do produto: <ENTER>");
+                let nome = input("Digite nome do produto: <ENTER>");
+                let genero = input("Insira o gênero do produto: <ENTER>")
+                let preco = input("Insira o preço do produto: <ENTER>")
+                if (nome == "Audio"){}
             }
             else if(op == 2){
 
