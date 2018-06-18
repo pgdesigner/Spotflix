@@ -34,6 +34,12 @@ while (fechar != "sim"){
         console.log("Faça seu Login")
         login = input("Digite seu login(emai-l): <ENTER>");
         senha = input("Digite sua senha: <ENTER>");
+        try{repositoriodeusuarios.retornarUsuario(login)
+            if (repositoriodeusuarios.retornarUsuario(login).getsenha != senha){
+                console.log("A senha errada");
+
+            }
+        }catch 
     }
     else if (op == 2){
         console.log("Vamos criar o seu cadastro");
