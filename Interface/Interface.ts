@@ -10,6 +10,7 @@ import { RepositorioProduto } from "../Repositorios/RepositorioProduto";
 import { Data } from "../Data/Data";
 import { Cliente } from "../Usuario/Cliente/Cliente";
 import { CartaoDeCredito } from "../CartaoDeCredito/CartaoDeCredito";
+import { OperadorDeSistema } from "../Usuario/Funcionario/OperadorDeSistema/OperadorDeSistema";
 
 let op: number = 1;
 let log: number = 1;
@@ -35,11 +36,22 @@ while (fechar != "sim"){
         login = input("Digite seu login(emai-l): <ENTER>");
         senha = input("Digite sua senha: <ENTER>");
         try{repositoriodeusuarios.retornarUsuario(login)
-            if (repositoriodeusuarios.retornarUsuario(login).getsenha != senha){
+            let a = repositoriodeusuarios.retornarUsuario(login).getsenha; 
+            if ((a as any) !== (senha as any)){
                 console.log("A senha errada");
-
             }
-        }catch 
+            if (repositoriodeusuarios.retornarUsuario(login) instanceof Cliente){
+                log = 1;
+            }
+            else if (repositoriodeusuarios.retornarUsuario(login) instanceof OperadorDeSistema){
+                log = 2;
+            }
+            else if (repositoriodeusuarios.retornarUsuario(login) instanceof Gerente){
+                log = 3;
+            }
+        }catch (ex){
+            console.log(ex);
+        }
     }
     else if (op == 2){
         console.log("Vamos criar o seu cadastro");

@@ -3,11 +3,11 @@ import {Data} from '../../Data/Data';
 import {ProdutoAbstract} from'../../Produto/ProdutoAbstract';
 import{CartaoDeCredito} from'../../CartaoDeCredito/CartaoDeCredito';
 
-export abstract class ClienteAbstract extends UsuarioAbstract{
-    protected endereco: string
-    protected dataDeNascimento: Data;
-    protected listaDeProduto: Array<ProdutoAbstract>;
-    protected cartaoDeCredito: CartaoDeCredito;
+export class Cliente extends UsuarioAbstract{
+    private endereco: string
+    private dataDeNascimento: Data;
+    private listaDeProduto: Array<ProdutoAbstract>;
+    private cartaoDeCredito: CartaoDeCredito;
     public constructor(nome: string, email: string, senha: string, endereco: string, dataDeNascimento: Data, cartaoDeCredito: CartaoDeCredito){
         super(nome,email,senha);
         this.endereco = endereco;
