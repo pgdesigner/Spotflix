@@ -1,8 +1,9 @@
 "use strict";
 exports.__esModule = true;
+var Map_1 = require("../Map/Map");
 var RepositorioUsuario = /** @class */ (function () {
     function RepositorioUsuario() {
-        this.repositorio = new Map();
+        this.repositorio = new Map_1.Map();
     }
     RepositorioUsuario.prototype.adicionarUsuario = function (email, usuario) {
         if (this.repositorio.has(email)) {

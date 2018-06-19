@@ -1,8 +1,9 @@
 "use strict";
 exports.__esModule = true;
+var Map_1 = require("../Map/Map");
 var RepositorioProduto = /** @class */ (function () {
     function RepositorioProduto() {
-        this.repositorioP = new Map();
+        this.repositorioP = new Map_1.Map();
     }
     RepositorioProduto.prototype.adicionarProduto = function (codigo, produto) {
         if (this.repositorioP.has(codigo)) {
@@ -13,7 +14,7 @@ var RepositorioProduto = /** @class */ (function () {
     };
     RepositorioProduto.prototype.removerProduto = function (codigo) {
         if (!this.repositorioP["delete"](codigo))
-            throw "Codigo de produto: " + codigo + "não existe";
+            throw "Codigo de produto: " + codigo + " não existe";
     };
     RepositorioProduto.prototype.retornarProduto = function (codigo) {
         var produto = this.repositorioP.get(codigo);

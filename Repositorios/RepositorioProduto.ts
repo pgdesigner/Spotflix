@@ -1,4 +1,5 @@
 import { ProdutoAbstract } from '../Produto/ProdutoAbstract';
+import {Map} from '../Map/Map';
 
 export class RepositorioProduto{
     private repositorioP : Map<string,ProdutoAbstract>;
@@ -15,7 +16,7 @@ export class RepositorioProduto{
     }
     public removerProduto(codigo: string){
         if (!this.repositorioP.delete(codigo))
-            throw "Codigo de produto: " + codigo + "não existe"    
+            throw "Codigo de produto: " + codigo + " não existe"    
     }
     public retornarProduto(codigo: string): ProdutoAbstract|undefined{
         let produto = this.repositorioP.get(codigo);

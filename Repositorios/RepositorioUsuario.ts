@@ -1,4 +1,5 @@
 import { UsuarioAbstract } from "../Usuario/UsuarioAbstract";
+import {Map} from '../Map/Map';
 
 export class RepositorioUsuario {
     private repositorio : Map<string,UsuarioAbstract>;
