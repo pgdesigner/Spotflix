@@ -7,7 +7,7 @@ var RepositorioProduto = /** @class */ (function () {
     }
     RepositorioProduto.prototype.adicionarProduto = function (codigo, produto) {
         if (this.repositorioP.has(codigo)) {
-            throw "Codigo de produto: " + codigo + "já existe";
+            throw "Codigo de produto: " + codigo + " já existe";
         }
         this.repositorioP.set(codigo, produto);
         return true;
@@ -19,7 +19,7 @@ var RepositorioProduto = /** @class */ (function () {
     RepositorioProduto.prototype.retornarProduto = function (codigo) {
         var produto = this.repositorioP.get(codigo);
         if (!produto)
-            throw "Codigo de produto: " + codigo + "não existe";
+            throw "Codigo de produto: " + codigo + " não existe";
         return produto;
     };
     RepositorioProduto.prototype.get = function () {

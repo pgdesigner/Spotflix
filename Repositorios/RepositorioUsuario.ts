@@ -9,19 +9,19 @@ export class RepositorioUsuario {
     }
     public adicionarUsuario(email:string, usuario: UsuarioAbstract) : boolean{
         if (this.repositorio.has(email)){
-            throw "Usuário de email: " + email + "já existe"
+            throw "Usuário de email: " + email + " já existe"
         }
         this.repositorio.set(email, usuario);
         return true; 
     }
     public removerUsuario(email:string){
         if (!this.repositorio.delete(email))
-            throw "Usuário de email: " + email + "não existe"
+            throw "Usuário de email: " + email + " não existe"
     }
     public retornarUsuario(email:string) : UsuarioAbstract{
         let usuario = this.repositorio.get(email);
         if (!usuario)
-            throw "Usuário de email: " + email + "não existe"
+            throw "Usuário de email: " + email + " não existe"
         return usuario;
     }
     public get(): Map<string, UsuarioAbstract> {

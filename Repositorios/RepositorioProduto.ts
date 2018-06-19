@@ -9,7 +9,7 @@ export class RepositorioProduto{
     }
     public adicionarProduto(codigo:string, produto:ProdutoAbstract) : boolean{
         if (this.repositorioP.has(codigo)){
-            throw "Codigo de produto: " + codigo + "já existe"
+            throw "Codigo de produto: " + codigo + " já existe"
         }
         this.repositorioP.set(codigo, produto);
         return true;
@@ -21,7 +21,7 @@ export class RepositorioProduto{
     public retornarProduto(codigo: string): ProdutoAbstract|undefined{
         let produto = this.repositorioP.get(codigo);
         if (!produto)
-            throw "Codigo de produto: " + codigo + "não existe"
+            throw "Codigo de produto: " + codigo + " não existe"
         return produto;
        
     }  

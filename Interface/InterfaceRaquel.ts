@@ -21,13 +21,18 @@ import { CartaoDeCredito } from '../CartaoDeCredito/CartaoDeCredito';
 
 let op: number = 1;
 let log: number = 1;
+let log2: number = 2;
+let log3: number = 3;
 let logout: string = "sim";
 let fechar: string = "não";
 let senha: string;
 let login: string;
-let g: Gerente = new Gerente("000000",12,"admin","gerente@admin.com","admin");
 let repositoriodeusuarios : RepositorioUsuario = new RepositorioUsuario;
 let repositoriodeprodutos: RepositorioProduto = new RepositorioProduto;
+let email = "gerente@admin.com"
+let senhaA = "admin"
+let g: UsuarioAbstract = new Gerente("000000",12,"admin", email,senhaA);
+repositoriodeusuarios.adicionarUsuario(email,g);
 
 
 
@@ -42,26 +47,25 @@ while (fechar != "sim"){
         console.log("Faça seu Login")
         login = input("Digite seu login(emai-l): <ENTER>");
         senha = input("Digite sua senha: <ENTER>");
-
-        try{repositoriodeusuarios.retornarUsuario(login)
-            let a = repositoriodeusuarios.retornarUsuario(login).getsenha; 
-            if ((a as any) !== (senha as any)){
+        
+        try{let a = repositoriodeusuarios.retornarUsuario(login).getsenha; 
+            if (a() != senha){
                 console.log("A senha errada");
             }
-            if (repositoriodeusuarios.retornarUsuario(login) instanceof Cliente){
+            else if (repositoriodeusuarios.retornarUsuario(login) instanceof Cliente){
                 log = 1;
             }
             else if (repositoriodeusuarios.retornarUsuario(login) instanceof OperadorDeSistema){
-                log = 2;
+                log2 = 2;
             }
             else if (repositoriodeusuarios.retornarUsuario(login) instanceof Gerente){
-                log = 3;
+                log3 = 3;
             }
         }catch (ex){
             console.log(ex);
         }
-        if (log == 3){
-            console.log("****Olá Gerente" + g + "****");
+        if (log3 == 3){
+            console.log("****Olá Gerente" + repositoriodeusuarios.retornarUsuario(login) + "****");
             console.log("1 - Cadastrar Operador");
             console.log("2 - Remover Operador");
             console.log("3 - Listar de Produtos");
@@ -116,19 +120,19 @@ while (fechar != "sim"){
                     }
                 }
             }
-            else if (op == 6 || 7 || 8){
-                if (op == 6){
-                    let codigo: string = input("Informe o código do produto: <ENTER>");
-                    repositoriodeprodutos.retornarProduto(codigo);
-                }
-                else if (op == 7){
-                    let email: string = input("Informe o email do cliente: <ENTER>");
-                    repositoriodeusuarios.retornarUsuario(email);
-                }
-                else if (op == 8){
-                    let email: string = input("Informe o email do operador: <ENTER>");
-                    repositoriodeusuarios.retornarUsuario(email);
-                }
+            
+            else if (op == 6){
+                let codigo: string = input("Informe o código do produto: <ENTER>");
+                console.log(repositoriodeprodutos.retornarProduto(codigo));
+            }
+            else if (op == 7){
+                let email: string = input("Informe o email do cliente: <ENTER>");
+                console.log(repositoriodeusuarios.retornarUsuario(email));
+            }
+            else if (op == 8){
+                let email: string = input("Informe o email do operador: <ENTER>");
+                console.log(repositoriodeusuarios.retornarUsuario(email));
+                
             }
             else if (op == 9){
                 console.log("Voce deseja mesmo sair?");
@@ -136,7 +140,7 @@ while (fechar != "sim"){
                 fechar = input("Digite sua opção: <ENTER>");
             }   
         }
-        else if (log == 2){
+        else if (log3 == 3){
             console.log("****Olá Operador" + repositoriodeusuarios.retornarUsuario(login) +"****");
             console.log("1 - Cadastrar Produtos");
             console.log("2 - Remover Produtos");
@@ -257,11 +261,11 @@ while (fechar != "sim"){
             }
             else if(op == 5){
                 let codigo = input("Digite código do produto: <ENTER>");
-                repositoriodeprodutos.retornarProduto(codigo);
+                console.log(repositoriodeprodutos.retornarProduto(codigo));
             }
             else if(op == 6){
                 let email = input("Digite email do cliente: <ENTER>");
-                repositoriodeusuarios.retornarUsuario(email);
+                console.log(repositoriodeusuarios.retornarUsuario(email));
             }
             else if(op == 7){
                 console.log("Voce deseja mesmo sair?");
@@ -276,7 +280,7 @@ while (fechar != "sim"){
             console.log("3 - Comprar Produto");
             console.log("4 - Play");
             console.log("5 - Sair");
-            op = parseInt (input ("Digite a opção: <ENTER>"));
+            op = parseInt (input ("Digite a opcao: <ENTER>"));
             if (op == 1){
                 console.log("**Listagem de produtos da loja**");
                 let a = repositoriodeprodutos.get().values
@@ -302,7 +306,9 @@ while (fechar != "sim"){
                 
             }
             else if(op == 5){
-                
+                console.log("voce deseja mesmo sair?")
+                console.log("   Sim          Nao");
+                fechar = input("Digite sua opçao: <ENTER>");
             }
         } 
     }
@@ -313,7 +319,7 @@ while (fechar != "sim"){
         let endereco: string = input("Informe seu endereco: <ENTER>");
         let nacimento: Data = new Data(parseInt(input("Data de nascimento: informe a o dia")),parseInt(input("informe a o mes")),parseInt(input("informe a o ano")))
         console.log("Para efetuar seu cadastro precisamos de seus dados de pagamento")
-        let numero:CartaoDeCredito = readline.question("Informe o numero de seu cartão: <ENTER>");
+        let numero:CartaoDeCredito = readline.question("Informe o numero de seu cartao: <ENTER>");
         let validade: Data = new Data(parseInt(input("Data de validade: informe a o dia")),parseInt(input("informe a o mes")),parseInt(input("informe a o ano")) )        
         let codigocvv: number = parseInt(input("Informe o codigo CVV: <ENTER>"))
         let limite: number = parseInt(input("Informe o limite de seu cartão: <ENTER>"))
@@ -327,6 +333,6 @@ while (fechar != "sim"){
     else if (op == 3){
         console.log("voce deseja mesmo sair?")
         console.log("   Sim          Nao");
-        fechar = input("Digite sua opção: <ENTER>");
-    }
+        fechar = input("Digite sua opçao: <ENTER>");
+    } 
 }
